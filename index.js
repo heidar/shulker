@@ -49,7 +49,8 @@ shulker.on("message", function(message) {
     if (message.channel.id === shulker.channels.get(c.DISCORD_CHANNEL_ID).id) {
         if (message.author.id !== shulker.user.id) {
             var data = {
-                text: "<" + message.author.username + "> " + message.cleanContent
+                text: "<" + message.author.username + "> " + message.cleanContent,
+                color: "blue"
             };
             var client = new Rcon(c.MINECRAFT_SERVER_RCON_IP, c.MINECRAFT_SERVER_RCON_PORT); // create rcon client
             client.auth(c.MINECRAFT_SERVER_RCON_PASSWORD, function(err){ // only authenticate when needed
